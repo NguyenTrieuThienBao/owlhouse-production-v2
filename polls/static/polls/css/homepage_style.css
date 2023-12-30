@@ -1,0 +1,604 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    height: .1rem;
+    width: .5rem;
+}
+::-webkit-scrollbar-track {
+    background-color: #67ccff;
+}
+::-webkit-scrollbar-thumb 
+{
+    background-color: #194eb9;
+    border-radius: 5rem;
+}
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #1d002c;
+    color: white;
+    overflow-x: hidden;
+}
+header {
+    padding: 25px 5%;
+    position: sticky;
+    background: #121137;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 1005;
+}
+header img {
+    height: 50px;
+    width: 50px;
+    display: flex;
+}
+.logo {
+    font-size: 1.5rem;
+    color: #12f7ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+ul.navlist {
+    display: flex;
+    align-items: center;
+}
+.navlist li{
+    margin-left: 0.5rem;
+}
+.navlist li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 5px 12px;
+    border: 2px solid #12f7ff;
+    border-radius: 25px;
+    transition: all .3s ease;
+}
+.navlist li a:hover {
+    box-shadow: 0 0 1rem #12f7ff;
+    background: #12f7ff;
+    color: #1d002c;
+}
+ul.search {
+    display: flex;
+    align-items: center;
+}
+.search li{
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+}
+.search input {
+    background-color: #121137;
+    font-size: 1rem;
+    border: 2px solid #12f7ff;
+    border-radius: 25px;
+    color: #fff;
+    padding: 5px;
+}
+.search li:first-child {
+    position: relative;
+}
+.search li:first-child i{
+    position: absolute;
+    right: 15px;
+    top: 8px;
+}
+.search button {
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: #121137;
+}
+section {
+    min-height: 100vh;
+}
+.parallax-home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.parallax-home img {
+      position: absolute;
+      object-fit: cover;
+      pointer-events: none;
+}
+.parallax-home #text {
+    position: absolute;
+    font-size: 2.5rem;
+    text-shadow: 0 10px 4px #194eb9;
+    top: 80%;
+    left: 3%;
+}
+.parallax-home img#moon, .about img#desert_moon{
+    mix-blend-mode: screen;
+}
+.about {
+    position: relative;
+}
+.about img {
+    position: absolute;
+    z-index: 1000;
+    object-fit: cover;
+    pointer-events: none;
+}
+.about img.about-waterfall {
+    position: absolute;
+    top: -95px;
+}
+.about .info-box {
+    position: absolute;
+    top: 0%;
+    left: 10%;
+    width: 50%;
+    z-index: 1003;
+    background: #1d002c;
+}
+.about .info-box h2 {
+    font-size: 2.5rem;
+    font-family: 'Agbalumo', sans-serif;
+}
+.about .info-box p {
+    font-family: 'Agbalumo', sans-serif;
+    margin-top: .5rem;
+    margin-bottom: 1.5rem;
+}
+.info-box .dots {
+    display: inline;
+}
+.info-box .more {
+    display: none;
+}
+.btn {
+    background: #12f7ff;
+    color: #1d002c;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: .5rem 1rem;
+    transition: all .3s ease;
+    border: 2px solid #12f7ff;
+    font-weight: 500;
+    font-size: 1rem;
+}
+.btn:hover {
+    box-shadow: 0 0 1rem #12f7ff;
+    background: #1d002c;
+    color: #12f7ff;
+}
+.products {
+    background: #121137;
+    padding: 3rem 10%;
+}
+.products h2 {
+    font-family: 'Agbalumo', sans-serif;
+    font-size: 2rem;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+.product-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.card {
+    padding: 1rem;
+    border: 2px solid #12f7ff;
+    text-align: center;
+    border-radius: 25px;
+    display: block;
+    transition: all .4s ease;
+    z-index: 999;
+}
+.card:hover {
+    cursor: pointer;
+    transform: translateY(-20px);
+    box-shadow: 0 0 1rem #12f7ff;
+    background: #12f7ff;
+    color: #1d002c;
+}
+.card:hover .btn {
+    border: 2px solid #1d002c;
+}
+.card img {
+    width: 150px;
+    height: 200px;
+    filter: drop-shadow(0 0 0.5rem #1797ff);
+}
+.card .price-name {
+    display: block;
+    padding-top: 10px;
+    justify-content: space-between;
+}
+.card .price-name h3 {
+    font-family: 'Agbalumo', sans-serif;
+    display: block;
+    block-size: 4rem;
+    width: 17rem;
+    padding: 10px 10px;
+}
+.info {
+    padding-bottom: .5rem;
+}
+.product-card .info p {
+    font-family: 'Agbalumo', sans-serif;
+    display: block;
+    block-size: 2rem;
+    text-align: left;
+}
+.card #add-cart {
+    width: 50%;
+    float: left;
+    margin: auto;
+}
+.card #shop-now {
+    width: 45%;
+    float: right;
+    margin: auto;
+}
+.choose-us {
+    background: #121137;
+    padding: 3rem 10%;
+    font-family: 'Agbalumo', sans-serif;
+}
+.choose-us h2 {
+    font-size: 2rem;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+}
+.choose-us-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.author {
+    background: #121137;
+    padding: 3rem 10%;
+    font-family: 'Agbalumo', sans-serif;
+}
+.author-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.author h2{
+    font-size: 2rem;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    margin-bottom: 5rem;
+    margin-top: 1rem;
+}
+.author-card img {
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+}
+.author .card {
+    border: none;
+}
+.author .card:hover {
+    color: #fff;
+    background: none;
+}
+.author-card p {
+    font-size: 1.5rem;
+}
+#progress {
+    position: fixed;
+    z-index: 1000;
+    bottom: 60px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    display: none;
+    place-items: center;
+    border-radius: 50%;
+    color: #1d002c;
+    cursor: pointer;
+}
+#progress-value {
+    display: block;
+    height: calc(100% - 12px);
+    width: calc(100% - 12px);
+    background: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+}
+header .bx-menu {
+    font-size: 2rem;
+    cursor: pointer;
+}
+.menu {
+    position: absolute;
+    background: #121137;
+    display: none;
+    height: 400px; 
+    width: 300px;
+    overflow: auto;
+    border-radius: 25px;
+}
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0px 20px;
+    font-size: 1.2rem;
+}
+.bx-menu:hover .menu {
+    display: block;
+}
+.menu.show {
+    display: block;
+}
+.sub-menu ul {
+    padding-left: 20px;
+    font-weight: 200;
+}
+.sub-menu li:hover{
+    text-decoration: 1px underline #fff;
+}
+.the-loai {
+    display: none;
+}
+.the-loai.show {
+    display: block;
+}
+.NXB {
+    display: none;
+}
+.NXB.show {
+    display: block;
+}
+.bx-chevron-down {
+    color: #fff;
+    float: right;
+    margin-top: 8px;
+}
+footer {
+    background: #12f7ff;
+    color: #1d002c;
+    font-size: 1.2rem;
+    padding: 25px 10%;
+}
+footer li {
+    padding-top: 5px;
+}
+.social {
+    font-size: 3rem;
+}
+@media screen and (max-width: 426px) and (min-width: 320px){
+    body{
+        width: 1300px;
+    }
+    header{
+        width: 1300px;
+        height: 300px;
+        
+    }
+    header a{
+        font-size: 4rem;
+    }
+    .bx-shopping-bag{
+        display: none;
+    }
+    .bxs-user{
+        display: none;
+    }
+    header .bx-menu{
+        font-size: 5rem;
+    }
+    .navlist li a{
+        display: none;
+    }
+    .logo{
+        font-size: 4rem;
+    }
+    .search input{
+        font-size: 3rem;
+        width: 200px;
+        height: 100px;
+    }
+    header img{
+        width: 100px;
+        height: 100px;
+    }
+    ul.breadcrumb{
+        display: none;
+    }
+    .info-o p{
+        font-size: 6rem;
+    }
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    body{
+        width: 1400px;
+    }
+    header{
+        width: 1400px;
+        
+    }
+}
+
+@media screen and (max-width: 431px) and (min-width: 320px){
+    body{
+        width: 1300px;
+    }
+    header{
+        width: 1300px;
+        height: 300px;
+        
+    }
+    header a{
+        font-size: 4rem;
+    }
+    header .bx-menu{
+        font-size: 5rem;
+    }
+    .navlist li a{
+        display: none;
+    }
+    .logo{
+        font-size: 3rem;
+    }
+    .info-box{
+        display: none;
+    }
+    .menu {
+        width: 700px;
+        height: 700px;
+    }
+    .menu li a{
+        font-size: 3rem;
+    }
+    .sub-menu a{
+        font-size: 2rem;
+    }
+    .search input{
+        font-size: 3rem;
+        width: 350px;
+        height: 100px;
+    }
+    .search .bx-search-alt{
+        font-size: 5rem;
+    }
+    header img{
+        width: 100px;
+        height: 100px;
+    }
+    ul.breadcrumb{
+        display: none;
+    }
+    .info-o p{
+        font-size: 6rem;
+    }
+    .collapsed h2, .collapsed p{
+        font-size: 1.6rem;
+    }
+    .btn{
+        font-size: 1.5rem;
+    }
+    .choose-us-card .card{
+        width: 350px;
+        height: 1370px;
+    }
+    .choose-us-card p{
+        font-size: 2.5rem;
+    }
+    .choose-us-card h1{
+        font-size: 3rem;
+    }
+    .choose-us-card img{
+        width: 300px;
+        height: 350px;
+    }
+    .products h2{
+        font-size: 4rem;
+        padding-bottom: 3rem;
+    }
+    .product-card{
+        display: block;
+        
+    }
+    .product-card .card{
+        margin: 0 auto;
+        width: 50rem;
+        height: 90rem;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .card .price-name {
+        display: inline;
+        block-size: 12rem;
+        padding-top: 20px;
+    }
+    .card .price-name h3 {
+        display: inline;
+        font-family: 'Agbalumo', sans-serif;
+        font-size: 3rem;
+        margin: 0 auto;
+        padding: 10px 10px;
+        margin-bottom: 10rem;
+    }
+    .info {
+        padding-bottom: .5rem;
+    }
+    .product-card .info p {
+        font-family: 'Agbalumo', sans-serif;
+        display: block;
+        block-size: 8rem;
+        font-size: 2.7rem;
+    }
+    .product-card img{
+        margin-top: 30px;
+        width: 30rem;
+        height: 45rem;
+    }
+    .card #shop-now, .card #add-cart{
+        margin-top: 1rem;
+        font-size: 3.5rem;
+        border-radius: 45px;
+    }
+    .author-card {
+        /*display: flex;
+        align-items: center;
+        justify-content: center;*/
+        gap: 1rem;
+    }
+    .author h2{
+        font-size: 4rem;
+        /*padding: 2rem 0 1rem 0;
+        text-align: center;
+        margin-bottom: 5rem;
+        margin-top: 1rem;*/
+    }
+    .author-card p{
+        font-size: 2rem;
+    }
+    .author-card img {
+        border-radius: 50%;
+        height: 250px;
+        width: 250px;
+    }
+    .choose-us {
+        background: #121137;
+        padding: 3rem 10%;
+        font-family: 'Agbalumo', sans-serif;
+    }
+    .choose-us h2 {
+        font-size: 4rem;
+        padding: 12rem 0 3rem 0;
+        text-align: center;
+        margin-bottom: 5rem;
+        margin-top: 5rem;
+    }
+    #contact{
+        font-size: 2rem;
+    }
+
+
+}
+@media screen and (max-width: 1025px) and (min-width: 768px) {
+    body{
+        width: 1400px;
+    }
+    header{
+        width: 1400px;
+        
+    }
+}

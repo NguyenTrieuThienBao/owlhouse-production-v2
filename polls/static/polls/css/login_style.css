@@ -1,0 +1,229 @@
+.login-html {
+    background: #121137;
+}
+.login {
+    margin-top: 120px;
+    margin-bottom: 50px;
+    font-family: 'Agbalumo', sans-serif;
+    width: 600px;
+    border: 2px solid #12f7ff;
+    border-radius: 25px;
+    padding: 40px;
+    background: #121137;
+    color: #fff;
+    margin-left: 30%;
+}
+.login h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+.form-control {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.row p {
+    margin: 0;
+    flex: 0.5;
+    font-size: 1.2rem;
+}
+.row input {
+    border-radius: 25px;
+    height: 30px;
+    margin: 0;
+    flex: 1;
+    padding-left: 10px;
+    color: #1d002c;
+    background: #fff;
+    font-size: 1rem;
+}
+.row small {
+    display: block;
+    margin-top: 10px;
+}
+.form-control.error small {
+    color: red;
+}
+.form-control.error input {
+  border: 2px solid red;
+}
+.form-control.success small {
+  color: red;
+}
+.forgot_pass_or_reg p {
+    font-size: 1.2rem;
+    text-align: center;
+} 
+.forgot_pass_or_reg a {
+    font-size: 1.2rem;
+    color: #12f7ff;
+}
+.btn-submit-login {
+    background: #12f7ff;
+    color: #1d002c;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 10px 50px;
+    border-radius: 25px;
+    transition: all .3s ease;
+    margin-top: 20px;
+    margin-left: 30%;
+}
+.btn-submit-login:hover {
+    box-shadow: 0 0 1rem #12f7ff;
+    background: #121137;
+    border: 2px solid #12f7ff;
+    color: #fff;
+}
+#small-logo {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    margin-left: 60%;
+    object-fit: cover;
+    margin-top: 20px;
+}
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #12f7ff;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+    color: #1d002c;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: #1d002c;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    color: #1d002c;
+    text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+    text-decoration: underline;
+}
+@media screen and (max-width: 426px) and (min-width: 320px){
+    body{
+        width: 1300px;
+    }
+    header{
+        width: 1300px;
+        height: 300px;
+        
+    }
+    header a{
+        font-size: 4rem;
+    }
+    .bx-shopping-bag{
+        display: none;
+    }
+    .bxs-user{
+        display: none;
+    }
+    header .bx-menu{
+        font-size: 5rem;
+    }
+    .navlist li a{
+        display: none;
+    }
+    .logo{
+        font-size: 4rem;
+    }
+    .search input{
+        font-size: 3rem;
+        width: 200px;
+        height: 100px;
+    }
+    header img{
+        width: 100px;
+        height: 100px;
+    }
+    ul.breadcrumb{
+        display: none;
+    }
+    .info-o p{
+        font-size: 6rem;
+    }
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    body{
+        width: 1400px;
+    }
+    header{
+        width: 1400px;
+        
+    }
+}
+
+@media screen and (max-width: 431px) and (min-width: 320px){
+    .info-o p{
+        font-size: 6rem;
+    }
+    #small-logo{
+        margin-top: 10px;
+        width: 10rem;
+        height: 10rem;
+    }
+    .login{
+        margin: 0 auto;
+        margin-top: 10rem;
+        margin-bottom: 100%;
+        width: 70rem;
+        height: 60rem;
+    }
+    .login h1{
+        font-size: 4rem;
+    }
+    .form-control p{
+        font-size: 3rem;
+    }
+    .row{
+        margin-top: 2rem;
+    }
+    .row input{
+        height: 6rem;
+        border-radius: 55px;
+        font-size: 2.5rem;
+    }
+    .forgot_pass_or_reg p, .forgot_pass_or_reg a{
+        font-size: 2.3rem;
+    }
+    .btn-submit-login{
+        font-size: 3rem;
+        font-weight: 520;
+        width: 30rem;
+        height: 7rem;
+        border-radius: 55px;
+        margin-top: 50px;
+        margin-left: 17rem;
+    }
+    .form-control.error small {
+        color: red;
+        font-size: 2rem;
+    }
+    .form-control.error input {
+      border: 5px solid red;
+    }
+    .form-control.success small {
+        color: red;
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 1025px) and (min-width: 768px) {
+    body{
+        width: 1400px;
+    }
+    header{
+        width: 1400px;
+        
+    }
+}

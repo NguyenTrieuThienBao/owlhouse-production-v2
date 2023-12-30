@@ -1,0 +1,410 @@
+.shopping-cart-html{
+    background: #121137;
+}
+.cart-body{
+    /*position: relative;*/
+    /*grid-template-columns: 40rem 20rem;
+    grid-template-rows: 10rem 10rem;
+    grid-column-gap: 10px;*/
+    width: auto;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.my_cart{
+    position: relative;
+    width: 40rem;
+    border: 2px solid #12f7ff;
+    border-radius: 25px;
+    background: #121137;
+    float: left;
+    margin-left: 10%;
+    margin-right: 10rem;
+}
+.my_cart h1{
+    padding-left: 2rem;
+    margin-top: 1rem;
+    font-family: 'Agbalumo', sans-serif;
+}
+.buy-amount{
+    display: flex;
+    border: none;
+    transition: all .3s ease;
+}
+.buy-amount button{
+    width: 30px;
+    height: 30px;
+    background-color:#12f7ff;
+    border: 1px solid #121137;
+    cursor: pointer;
+    border-radius: 5px;
+    border-width: 2px;
+}
+.buy-amount .amount{
+    width: 40px;
+    height: 28px;
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    /*background-color: white;*/
+    color: #1d002c;
+}
+.buy-amount .amount::before{
+    content: '';
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    /*filter: blur(100px); /* Điều chỉnh mức độ mờ ở đây */
+    background-color: rgb(255, 255, 255); /* Màu nền, có thể thay đổi theo ý muốn */
+    opacity: 0.2; /* Điều chỉnh độ trong suốt từ 0 đến 1 */
+   /* background-color: white;*/
+}
+.buy-amount button:hover{
+    box-shadow: 0 0 1rem #12f7ff;
+    background: #121137;
+    color: #12f7ff;
+    border: 2px solid #12f7ff;
+}
+.one_product{
+    display: flex;
+    border: 2px solid #12f7ff;
+    border-radius: 25px;
+    margin: 20px;
+    padding: 10px;
+    background-color: white;
+    color: #1d002c;
+}
+.one_product #check{
+    width: 25px;
+    height: 25px;
+}
+.one_product img{
+    width: 100px;
+    height: 150px;
+    margin-left: 1.5rem;
+}
+.one_product .info{
+    font-family: 'Agbalumo', sans-serif;
+    flex: 1;
+}
+.one_product .show_img{
+    flex: 0.5;
+    align-items: center;
+    justify-content: center;
+}
+.one_product .info h3{
+    block-size: 4rem;
+}
+.one_product .info h4{
+    block-size: 2rem;
+    padding-right: 1rem;
+}
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #12f7ff;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+    color: #1d002c;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: #1d002c;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    color: #1d002c;
+    text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+    text-decoration: underline;
+}
+.container{
+    position: relative;
+    width: 20rem;
+    max-width: 100vw;
+    height: 500px;
+    overflow: hidden;
+    margin-bottom: 6rem;
+    margin-top: 2rem;
+    margin-left: 20px;
+}
+.container .wrapper{
+    position: absolute;
+    width: max-content;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
+}
+.container .wrapper img{
+    width: 20rem;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
+.container .buttons{
+    position: absolute;
+    top: 45%;
+    left: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.container .buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    color: #1d002c;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+.container .dots{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.container .dots li{
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 1s;
+}
+.container .dots li.active{
+    width: 30px;
+}
+
+@media screen and (max-width: 1024px){
+    .container{
+        height: 400px;
+    }
+}
+.my_cart .button{
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color:#12f7ff;
+    border: 1px solid #1d002c;
+    cursor: pointer;
+    border-radius: 25px;
+    border-width: 2px;
+    text-align: center;
+    margin: 20px;
+    color: #1d002c;
+    transition: all .3s ease;
+    font-weight: 500;
+    margin-left: 35%;
+    font-size: 1.2rem;
+}
+.button:hover{
+    box-shadow: 0 0 1rem #12f7ff;
+    background: #121137;
+    color: #fff;
+    border: 2px solid #12f7ff;
+}
+@media screen and (max-width: 426px) and (min-width: 320px){
+    body{
+        width: 1300px;
+    }
+    header{
+        width: 1300px;
+        height: 300px;
+        
+    }
+    header a{
+        font-size: 4rem;
+    }
+    .bx-shopping-bag{
+        display: none;
+    }
+    .bxs-user{
+        display: none;
+    }
+    header .bx-menu{
+        font-size: 5rem;
+    }
+    .navlist li a{
+        display: none;
+    }
+    .logo{
+        font-size: 4rem;
+    }
+    .search input{
+        font-size: 3rem;
+        width: 200px;
+        height: 100px;
+    }
+    header img{
+        width: 100px;
+        height: 100px;
+    }
+    ul.breadcrumb{
+        display: none;
+    }
+    .info-o p{
+        font-size: 6rem;
+    }
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    body{
+        width: 1400px;
+    }
+    header{
+        width: 1400px;
+        
+    }
+}
+
+
+.info .delete-btn{
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border: 1px solid #121137;
+    cursor: pointer;
+    border-radius: 5px;
+    border-width: 2px;
+    margin-left: 1rem;
+}
+.info .delete-btn:hover{
+    box-shadow: 0 0 1rem #12f7ff;
+    background: #121137;
+    color: #12f7ff;
+    border: 2px solid #12f7ff;
+}
+
+@media screen and (max-width: 431px) and (min-width: 320px){
+    .search input{
+        font-size: 3rem;
+        width: 350px;
+        height: 100px;
+    }
+    header img{
+        width: 100px;
+        height: 100px;
+    }
+    ul.breadcrumb{
+        display: none;
+    }
+    .cart_body{
+        display: grid;
+        grid-template-columns: 55rem;
+        grid-template-rows: max-content;
+        grid-row-gap: 10rem;
+    }
+    .my_cart h1{
+        font-size: 4rem;
+    }
+    .my_cart h4{
+        font-size: 2.5rem;
+        padding-top: 5rem;
+    }
+    .my_cart{
+        width: 70rem;
+        height: max-content;
+        margin-top: 10rem;
+    }
+    .my_cart .button{
+        font-size: 3rem;
+        width: 30rem;
+        height: 6rem;
+        border-radius: 45px;
+        margin-left: 18rem;
+    }
+    .buy-amount .minus-btn, .buy-amount .amount, .buy-amount .plus-btn{
+       margin-top: 6rem;
+    }
+    .buy-amount .minus-btn, .buy-amount .plus-btn{
+        width: 3rem;
+        height: 3rem;
+    }
+    .buy-amount .amount{
+        height: 3rem;
+        width: 3.5rem;
+        font-size: 2rem;
+    }
+    .info .delete-btn{
+        margin-top: 6rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 5px;
+        border-width: 2px;
+        margin-left: 1rem;
+    }
+    .info h3{
+        font-size: 3rem;
+    }
+    .one_product{
+        margin-top: 50px;
+        height: 30rem;
+    }
+    .show_img img{
+        margin-top: 30px;
+        width: 17rem;
+        height: 23rem;
+    }
+    .show_img #check{
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .container{
+        width: 50rem;
+        max-width: 100%;
+        height: 80rem;
+        max-height: 100rem;
+        margin-left: 27%;
+    }
+    /*.container .wrapper{
+        width: 40px;
+        max-width: 60rem;
+        height: 70rem;
+    }*/
+    .container .wrapper img{
+        width: 50rem;
+        max-width: 100%;
+        height: 80rem;
+        max-height: 100%;
+    }
+    .container .buttons button{
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        font-size: 3rem;
+    }
+    .container .dots li{
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 1.5rem;
+        border-radius: 20px;
+    }
+    .container .dots li.active{
+        width: 3rem;
+    }
+}
+@media screen and (max-width: 1025px) and (min-width: 768px) {
+    body{
+        width: 1400px;
+    }
+    header{
+        width: 1400px;
+        
+    }
+}

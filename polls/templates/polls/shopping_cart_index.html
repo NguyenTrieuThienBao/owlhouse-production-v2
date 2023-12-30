@@ -1,0 +1,297 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/css/homepage_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/css/shopping_cart_style.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+<body style="background: #121137">
+    <header>
+        <i class='bx bx-menu' style='color:#12f7ff' id="bx-menu">
+            <div class="menu" id="menu">
+                <ul class="sub-menu">
+                    <li><a href="{% url 'polls:homepage' %}">Trang chủ</a></li>
+                    <li><a href="{% url 'polls:listbooks' %}">Tất cả sản phẩm</a></li>
+                    <li><a href="#">Thể loại</a>
+                        <i class='bx bx-chevron-down' id="the-loai-chevron-down"></i>
+                        <ul class="the-loai" id="the-loai">
+                            <li><a href="#">Văn học</a></li>
+                            <ul class="Van-hoc">
+                                <li><a href="/category/van-hoc-hien-dai">Văn học hiện đại</a></li>
+                                <li><a href="/category/van-hoc-nuoc-ngoai">Văn học nước ngoài</a></li>
+                                <li><a href="#">Tiểu thuyết</a></li>
+                                <li><a href="#">Ngôn tình</a></li>
+                                <li><a href="#">Truyện ngắn - Tản văn</a></li>
+                                <li><a href="#">Khoa học viễn tưởng</a></li>
+                                <li><a href="#">Trinh thám - Kinh dị</a></li>
+                                <li><a href="#">Tâm linh - Tôn giáo</a></li>
+                                <li><a href="#">Y học - Sức khỏe</a></li>
+                            </ul>
+                            <li><a href="#">Kinh tế</a></li>
+                            <ul class="Kinh-te">
+                                <li><a href="#">Marketing - Bán hàng</a></li>
+                                <li><a href="#">Quản trị kinh doanh</a></li>
+                                <li><a href="#">Phân tích thị trường</a></li>
+                            </ul>
+                            <li><a href="#">Truyện tranh</a></li>
+                            <li><a href="#">Thiếu nhi</a></li>
+                            <ul class="Thieu-nhi">
+                                <li><a href="#">Kỹ năng sống cho trẻ</a></li>
+                                <li><a href="#">Nuôi dạy con</a></li>
+                                <li><a href="#">Vừa chơi vừa học</a></li>
+                                <li><a href="#">Sách tô màu</a></li>
+                            </ul>
+                            <li><a href="#">Sách giáo khoa</a></li>
+                            <ul class="SGK">
+                                <li><a href="#">Sách giáo khoa</a></li>
+                                <li><a href="#">Sách bài tập</a></li>
+                                <li><a href="#">Sách tham khảo</a></li>
+                                <li><a href="#">Sách luyện thi</a></li>
+                            </ul>
+                            <li><a href="#">Phân loại khác</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Tác giả</a></li>
+                    <li><a href="#">Nhà xuất bản</a>
+                        <i class='bx bx-chevron-down' id="NXB-chevron-down"></i>
+                        <ul class="NXB" id="NXB">
+                            <li><a href="#">Nhã Nam</a></li>
+                            <li><a href="#">NXB Trẻ</a></li>
+                            <li><a href="#">IPM</a></li>
+                            <li><a href="#">AZ Book</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+        </i>
+        <img src="{% static 'polls/image/logo.svg' %}" alt="">
+        <a href="#" class="logo">Ngôi nhà của Cú</a>
+        <ul class="search">
+            <form action="{% url 'polls:search' %}" method="get">
+            <li>
+                <input type="text" placeholder="Tìm kiếm" name="search">
+                <button type='submit'><i class='bx bx-search-alt' style='color:#12f7ff'></i></button>
+            </li>
+            </form>
+            <li><a href="{% url 'polls:cart' %}"><i class='bx bx-shopping-bag' style='color:#12f7ff' ></i></a></i></li>
+            <li><a href="{% url 'polls:account' %}"><i class='bx bxs-user' style='color:#12f7ff'></i></a></li>
+        </ul>
+        <ul class="navlist">
+   {% if user.is_authenticated %}
+            <ul class="navlist">
+                <li><a href="{% url 'polls:homepage' %}">Trang chủ</a></li>
+                <li><a href="{% url 'polls:homepage' %}#about">Giới thiệu</a></li>
+                <li><a href="{% url 'polls:homepage' %}#contact">Liên hệ</a></li>
+                <li><span>Hi, {{ user.username }}</span></li>
+                <li><a href="{% url 'polls:logout' %}">Đăng xuất</a></li>
+            </ul>
+        {% else %}
+            <ul class="navlist">
+                <li><a href="{% url 'homepage' %}">Trang chủ</a></li>
+                <li><a href="{% url 'homepage' %}#about">Giới thiệu</a></li>
+                <li><a href="{% url 'homepage' %}#contact">Liên hệ</a></li>
+                <li><a href="{% url 'login' %}">Đăng nhập</a></li>
+            </ul>
+        {% endif %}
+        </ul>
+    </header>
+
+    <ul class="breadcrumb">
+        <li><a href="{% url 'polls:homepage' %}">Trang chủ</a></li>
+        <li>Giỏ hàng</i> 
+    </ul>
+    <div class="cart_body">
+    <div class="my_cart">
+        <h1>Giỏ hàng của bạn</h1>
+        {% for item in items %}
+        {% for c in cart %}
+        {% if c.product_id == item.id %}
+            <div class="one_product" id="cart-{{ c.id }}">
+                    <div class="show_img">
+                        <input type="checkbox" name="products" id="check">
+                        <img src="{{ item.image.url }}" alt="">
+                    </div>
+                    <div class="info">
+                        <h3>{{ item.title}}</h3>
+                        <h4>Giá thành: {{ item.price }}đ</h4>
+                        <div class="buy-amount">
+                            <input type='hidden' name='csrfmiddlewaretoken' value='{{ csrf_token }}'>
+                            <h4>Số lượng</h4>
+                            <button class="minus-btn" id="minus" data-product-id="{{ item.id }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-3 -3 30 30" stroke-width="2.0" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+                                </svg>
+                            </button>
+                            
+                                    <input type="text" min="1" name="amount" id="amount-{{ item.id }}" class="amount" value="{{ c.quantity }}" style="width:40px">
+                            
+                            <button class="plus-btn" id="plus" data-product-id="{{ item.id }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-3 -3 30 30" stroke-width="2.0" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                            </button>
+                            <button class="delete-btn" data-cart-id="{{ c.id }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="-3 -3 30 30" stroke-width="2.0" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 7.5l15 9m0-9l-15 9" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+            </div>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+		
+        
+        <a href="{% url 'polls:payment_view' %}" class="button">Thanh toán</a>
+    </div>
+    
+    <div class="container">
+            <div class="wrapper">
+                <div class="item"> 
+                    <img src="{% static 'polls/image/products/Dieu-ky-dieu-cua-tiem-tap-hoa-Namiya.webp' %}">
+                </div>
+                <div class="item">
+                    <img src="{% static 'polls/image/products/Tam-the.webp' %}">
+                </div>
+                <div class="item">
+                    <img src="{% static 'polls/image/products/Phia-sau-nghi-can-X.webp' %}">
+                </div>
+                <div class="item">
+                    <img src="{% static 'polls/image/products/phapytanminh.jpeg' %}">
+                </div>
+                <div class="item">
+                    <img src="{% static 'polls/image/products/Quai-vat-trong-quan-do-nuong.webp' %}">
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="prev"><</button>
+                <button id="next">></button>
+            </div>
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer id="contact">
+        <h2>Liên hệ</h2>
+        <ul>
+            <li><i class='bx bxs-car' style='color:#1d002c'></i><b> Địa chỉ:</b> Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh</li>
+            <li><i class='bx bxs-phone' style='color:#1d002c'></i><b> Số điện thoại:</b> 0912XXXXXX</li>
+            <li><i class='bx bx-envelope' style='color:#1d002c'></i><b> Email:</b> 21521195@gm.uit.edu.vn</li>
+        </ul>
+        <ul class="social">
+            <i class='bx bxl-facebook-square'></i>
+            <i class='bx bxl-instagram'></i>
+        </ul>
+    </footer>
+    <script src="{% static 'polls/js/shopping_cart_script.js' %}"></script>
+    <script src="{% static 'polls/js/homepage_script.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+    $(document).ready(function () {
+    $('.plus-btn').click(function() {
+        var productId = $(this).data('product-id');
+        var sProductAmount = $('#amount-' + productId).val();
+        var productAmount = parseInt(sProductAmount, 10);
+        event.preventDefault();
+        var csrfToken = $('input[name=csrfmiddlewaretoken]').val();
+        $.ajax({
+            type: 'POST',
+            url: "/update_from_cart/" + productId + '/' + productAmount,  // Replace with the actual URL of your view
+            headers: {
+                'X-CSRFToken': csrfToken  // Include CSRF token in the headers
+            },
+            success: function (data) {
+                $('#amount-' + productId).attr('value', productAmount.toString())
+            },
+            error: function (data) {
+                alert('Form submission failed!');
+            }
+        });
+    });
+
+    $('.delete-btn').click(function() {
+        var cartId = $(this).data('cart-id');
+        var infoDivId = "#cart-" + cartId;
+        
+        event.preventDefault();
+        var csrfToken = $('input[name=csrfmiddlewaretoken]').val();
+        $.ajax({
+            type: 'POST',
+            url: "/remove_from_cart/" + cartId,  // Replace with the actual URL of your view
+            headers: {
+                'X-CSRFToken': csrfToken  // Include CSRF token in the headers
+            },
+            success: function (data) {
+                $(infoDivId).remove();
+            },
+            error: function (data) {
+                alert('Form submission failed!');
+            }
+        });
+    });
+
+    $('.minus-btn').click(function() {
+        var productId = $(this).data('product-id');
+        var sProductAmount = $('#amount-' + productId).val();
+        var productAmount = parseInt(sProductAmount, 10);
+        if (productAmount < 1)
+        {
+            productAmount = 1;
+        }
+        
+        event.preventDefault();
+        var csrfToken = $('input[name=csrfmiddlewaretoken]').val();
+        $.ajax({
+            type: 'POST',
+            url: "/update_from_cart/" + productId + '/' + productAmount,  // Replace with the actual URL of your view
+            headers: {
+                'X-CSRFToken': csrfToken  // Include CSRF token in the headers
+            },
+            success: function (data) {
+                $('#amount-' + productId).attr('value', productAmount.toString())
+            },
+            error: function (data) {
+                alert('Form submission failed!');
+            }
+        });
+    });
+
+    $('.amount').change(function() {
+        var productAmount = $(this).val();
+        var productId = $(this).attr('id').substring(7, 8);
+        event.preventDefault();
+        var csrfToken = $('input[name=csrfmiddlewaretoken]').val();
+        $.ajax({
+            type: 'POST',
+            url: "/update_from_cart/" + productId + '/' + productAmount,  // Replace with the actual URL of your view
+            headers: {
+                'X-CSRFToken': csrfToken  // Include CSRF token in the headers
+            },
+            success: function (data) {
+                $('#amount-' + productId).val(productAmount);
+            },
+            error: function (data) {
+                alert('Form submission failed!');
+            }
+        });
+        
+    });
+
+
+    });
+</script>
+</body>
+
+</html>

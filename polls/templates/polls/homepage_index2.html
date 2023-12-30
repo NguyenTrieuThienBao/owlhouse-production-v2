@@ -1,0 +1,281 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/css/homepage_style.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+</head>
+
+<!--Đây là trang chủ của website-->
+<body >
+    <!--header-->
+    <header>
+        <div class='bx bx-menu' style='color:#12f7ff' id="bx-menu">
+            <div class="menu" id="menu">
+                <ul class="sub-menu">
+                    <li><a href="{% url 'polls:homepage' %}">Trang chủ</a></li>
+                    <li><a href="{% url 'polls:listbooks' %}">Tất cả sản phẩm</a></li>
+                    <li>
+                        <a href="#">Thể loại</a>
+                        <i class='bx bx-chevron-down' id="the-loai-chevron-down"></i>
+                        <ul class="the-loai" id="the-loai">
+                            <li>
+                                <a href="#">Văn học</a>
+                                <ul class="Van-hoc">
+                                    <li><a href="{% url 'polls:category_list' category_slug='van-hoc-hien-dai' %}">Văn học hiện đại</a></li>
+                                    <li><a href="{% url 'polls:category_list' category_slug='van-hoc-nuoc-ngoai' %}">Văn học nước ngoài</a></li>
+                                    <li><a href="#">Tiểu thuyết</a></li>
+                                    <li><a href="#">Ngôn tình</a></li>
+                                    <li><a href="#">Truyện ngắn - Tản văn</a></li>
+                                    <li><a href="#">Khoa học viễn tưởng</a></li>
+                                    <li><a href="#">Trinh thám - Kinh dị</a></li>
+                                    <li><a href="#">Tâm linh - Tôn giáo</a></li>
+                                    <li><a href="#">Y học - Sức khỏe</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Kinh tế</a>
+                                <ul class="Kinh-te">
+                                    <li><a href="#">Marketing - Bán hàng</a></li>
+                                    <li><a href="#">Quản trị kinh doanh</a></li>
+                                    <li><a href="#">Phân tích thị trường</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Truyện tranh</a></li>
+                            <li>
+                                <a href="#">Thiếu nhi</a>
+                                <ul class="Thieu-nhi">
+                                    <li><a href="#">Kỹ năng sống cho trẻ</a></li>
+                                    <li><a href="#">Nuôi dạy con</a></li>
+                                    <li><a href="#">Vừa chơi vừa học</a></li>
+                                    <li><a href="#">Sách tô màu</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Sách giáo khoa</a>
+                                <ul class="SGK">
+                                    <li><a href="#">Sách giáo khoa</a></li>
+                                    <li><a href="#">Sách bài tập</a></li>
+                                    <li><a href="#">Sách tham khảo</a></li>
+                                    <li><a href="#">Sách luyện thi</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Phân loại khác</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Tác giả</a></li>
+                    <li>
+                        <a href="#">Nhà xuất bản</a>
+                        <i class='bx bx-chevron-down' id="NXB-chevron-down"></i>
+                        <ul class="NXB" id="NXB">
+                            <li><a href="#">Nhã Nam</a></li>
+                            <li><a href="#">NXB Trẻ</a></li>
+                            <li><a href="#">IPM</a></li>
+                            <li><a href="#">AZ Book</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </div>
+        </div>
+        <img src="{% static 'polls/image/logo.svg' %}" alt="">
+        <a href="#" class="logo">Ngôi nhà của Cú</a>
+        <ul class="search">
+            <form action="{% url 'polls:search' %}" method="get">
+            <li>
+                <input type="text" placeholder="Tìm kiếm" name="search">
+                <button type='submit'><i class='bx bx-search-alt' style='color:#12f7ff'></i></button>
+            </li>
+            </form>
+            <li><a href="{% url 'polls:login' %}"><i class='bx bx-shopping-bag' style='color:#12f7ff'></i></a></li>
+            <li><a href="{% url 'polls:login' %}"><i class='bx bxs-user' style='color:#12f7ff'></i></a></li>
+        </ul>
+        <ul class="navlist">
+            <li><a href="{% url 'polls:homepage' %}">Trang chủ</a></li>
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#contact">Liên hệ</a></li>
+            <li><a href="{% url 'polls:login' %}">Đăng nhập</a></li>
+        </ul>
+    </header>
+
+    <!--Giao diện chính trong trang chủ-->
+    <section class="parallax-home">
+        <img src="{% static 'polls/image/Home/sky.png' %}" alt="" id="">
+        <img src="{% static 'polls/image/Home/moon.png' %}" alt="" id="moon">
+        <img src="{% static 'polls/image/Home/water.png' %}" alt="" id="">
+        <img src="{% static 'polls/image/Home/center-city.png' %}" alt="" id="">
+        <img src="{% static 'polls/image/Home/right-city.png' %}" alt="" id="">
+        <img src="{% static 'polls/image/Home/left-city.png' %}" alt="" id="">
+        <img src="{% static 'polls/image/Home/Name.png' %}" alt="" id="name_train">
+        <img src="{% static 'polls/image/Home/rail.png' %}" alt="" id="">
+        <h1 id="text">Owl's House</h1>
+        <img src="{% static 'polls/image/Home/hill-left-1.png' %}" alt="" id="">
+        <img src="{% static 'polls/image/Home/hill-right-1.png' %}" alt="" id="">
+    </section>
+
+    <!--Giới thiệu website-->
+    <section class="about" id="about">
+        <div class="info-box collapsed">
+            <h2>Giới thiệu</h2>
+            <p>
+                Chào mừng cậu đến với Ngôi nhà của Cú - Ngôi nhà của những tâm hồn đam mê đọc sách! 
+                Chúng tớ tự hào là điểm đến lý tưởng cho những ai yêu sách, nơi cung cấp một bộ sưu tập đa dạng 
+                <span class="dots">...</span>
+                <span class="more">
+                    và phong phú các tác phẩm văn học từ khắp nơi trên thế giới, mang đến một trải nghiệm mua sắm bất tận, 
+                    đắm chìm trong thế giới đa văn hóa và đa thể loại, từ phương Tây sang phương Đông, từ cổ điển đến hiện đại.
+                </span>
+            </p>
+            <button class="btn">Đọc thêm!</button>
+        </div>
+        <img src="{% static 'polls/image/About/waterfall.png' %}" alt="" id="waterfall" class="about-waterfall">
+        <img src="{% static 'polls/image/About/desert-sky.png' %}" alt="">
+        <img src="{% static 'polls/image/About/desert-moon.png' %}" alt="" id="desert_moon">
+        <img src="{% static 'polls/image/About/book-island.svg' %}" alt="">
+        <img src="{% static 'polls/image/About/desert-rock.png' %}" alt="">
+        <img src="{% static 'polls/image/About/water.png' %}" alt="">
+        <img src="{% static 'polls/image/About/ship.png' %}" alt="" id="ship">
+        <img src="{% static 'polls/image/About/book-fly.svg' %}" alt="">
+        <img src="{% static 'polls/image/About/grass.png' %}" alt="">
+
+        <div id="progress">
+            <span id="progress-value">
+                <i class='bx bx-chevrons-up'></i>
+            </span>
+        </div>
+    </section>
+
+    <section class="choose-us" id="choose-us">
+        <h2>Lý do cậu nên chọn chúng tớ</h2>
+        <div class="choose-us-card">
+            <div class="card">
+                <img src="{% static 'polls/image/Choose-us/variaty.svg' %}" alt="">
+                <div class="info">
+                    <h1>Đa Dạng và Phong Phú</h1>
+                    <p>Nhà Cú tự hào là ngôi nhà của hàng ngàn tựa sách từ nhiều thể loại khác nhau. Từ văn học, khoa học, đến sách thiếu nhi và nghệ thuật, chúng tớ có đủ mọi thứ để đáp ứng đa dạng sở thích đọc sách của cậu.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'polls/image/Choose-us/perfect.svg' %}" alt="">
+                <div class="info">
+                    <h1>Chất Lượng Đảm Bảo</h1>
+                    <p>Chúng tớ chọn lựa cẩn thận từng cuốn sách để đảm bảo chất lượng và nội dung sách. Sách của chúng tớ là những kiệt tác văn hóa, được chọn lọc với tình yêu và sự tôn trọng đối với nghệ thuật viết.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{% static 'polls/image/Choose-us/Delivery.svg' %}" alt="">
+                <div class="info">
+                    <h1>Giao Hàng Nhanh Chóng</h1>
+                    <p>Chúng tớ cam kết giao hàng nhanh chóng và an toàn. Mỗi đơn đặt hàng đều được xử lý một cách cẩn thận để đảm bảo cậu nhận được cuốn sách mình mong đợi một cách hoàn hảo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h2>Sản phẩm nổi bật</h2>
+        <div class="product-card">
+            {% for p in feature_products %}
+            <div class="card">
+                <a style='text-decoration:none; color:white' href="{{ p.get_absolute_url }}">
+                    <img src="{{ p.image.url }}" alt="">
+                    <div class="info">
+                        <div class="price-name">
+                            <h3>{{ p.title }}</h3>
+                        </div>
+                        <p>Tác giả: <span style='text-transform:uppercase'>{{ p.author }}</span></p>
+                        <p>Giá: {{ p.price }} đ</p>
+                    </div>
+                </a>
+                    <input type='hidden' name='add-cart' value='{{ p.id }}' id='input-p-id'>
+                    <a href="{% url 'polls:login' %}"><button href="#" class="btn" class="add-cart" type='submit'>Thêm vào <i class='bx bxs-cart'></i></button></a>
+                    <a href="{% url 'polls:login' %}"><button class="btn" class="shop-now" type='submit'>Mua ngay</button></a>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </section>
+
+    <section class="author">
+        <h2>Tác giả nổi bật</h2>
+        <div class="author-card">
+            <div class="card">
+                <img src="{% static 'polls/image/Author/Dao-Duy-Anh.webp' %}" alt="">
+                <p>Đào Duy Anh</p>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'polls/image/Author/Emily-Bronte.webp' %}" alt="">
+                <p>Emily Bronte</p>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'polls/image/Author/keigo-higashino.webp' %}" alt="">
+                <p>Higashino Keigo</p>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'polls/image/Author/Steve-Harvey.webp' %}" alt="">
+                <p>Steve Harvey</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Liên hệ</h2>
+        <ul>
+            <li><i class='bx bxs-car' style='color:#1d002c'></i><b> Địa chỉ:</b> Khu phố 6, P.Linh Trung, Tp.Thủ Đức, Tp.Hồ Chí Minh</li>
+            <li><i class='bx bxs-phone' style='color:#1d002c'></i><b> Số điện thoại:</b> 0912XXXXXX</li>
+            <li><i class='bx bx-envelope' style='color:#1d002c'></i><b> Email:</b> 21521195@gm.uit.edu.vn</li>
+        </ul>
+        <ul class="social">
+            <i class='bx bxl-facebook-square'></i>
+            <i class='bx bxl-instagram'></i>
+        </ul>
+    </footer>
+    <script src="{% static 'polls/js/homepage_script.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+    $(document).ready(function () {
+    $('.add-cart-form').submit(function(event) {
+        var productId = $(this).data('product-id');
+        event.preventDefault();
+        var csrfToken = $("[name=csrfmiddlewaretoken]").val();
+        $.ajax({
+            type: 'POST',
+            url: "/add_cart/" + productId + '/1',  // Replace with the actual URL of your view
+            headers: {
+                'X-CSRFToken': csrfToken  // Include CSRF token in the headers
+            },
+            success: function (data) {
+        
+            },
+            error: function (data) {
+                alert('Form submission failed!');
+            }
+        });
+    });
+
+    });
+
+    var isClicked = false;
+    function redirect_to_cart()
+    {
+        if (isClicked){
+            return;
+        }
+        isClicked = true;
+        setTimeout(function() {
+        // Reset the flag after the delay
+        isClicked = false;
+        
+        // Redirect to another page
+        window.location.href = '/shopping-cart'; // Replace with your desired URL
+    }, 100);
+    };
+    </script>
+</body>
+</html>
