@@ -130,8 +130,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # VNPAY CONFIG
-#VNPAY_RETURN_URL = 'https://baonguyen1493.pythonanywhere.com/payment_return'  # get from config
-VNPAY_RETURN_URL = 'http://127.0.0.1:8000/payment_return'  # get from config
+VNPAY_RETURN_URL = 'https://theowlhouse.pythonanywhere.com/payment_return'  # get from config
+#VNPAY_RETURN_URL = 'http://127.0.0.1:8000/payment_return'  # get from config
 VNPAY_PAYMENT_URL = 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html'  # get from config
 VNPAY_API_URL = 'https://sandbox.vnpayment.vn/merchant_webapi/api/transaction'
 VNPAY_TMN_CODE = '460XLNUO'  # Website ID in VNPAY System, get from config
