@@ -114,7 +114,8 @@ def listbooks_view(request):
 
 def logout_view(request):
     logout(request)
-    return render(request, 'polls/homepage_index2.html')
+    feature_products = Product.objects.all()[:4]
+    return render(request, 'polls/homepage_index2.html', {'feature_products': feature_products})
 
 def product_detail(request, slug):
     product = get_object_or_404(Product, slug=slug, in_stock=True)
